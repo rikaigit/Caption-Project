@@ -43,6 +43,7 @@ app.post("/submit", (req, res) => {
     let postDescription = req.body.description;
     let publishedDate = new Date().toLocaleDateString("en-GB");
     console.log(postTitles);
+    console.log(postDescription);
     allPosts.push({postTitles, publishedDate });
     res.redirect("/view"); //This is for redirect the ejs file on server to avoid the re-submission.
 });
