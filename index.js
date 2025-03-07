@@ -47,7 +47,6 @@ app.post("/submit", (req, res) => {
     allPosts.push({ postTitles, publishedDate });
     res.redirect("/view"); //This is for redirect the ejs file on server to avoid the re-submission.
 });
-//
 
 app.post("/submit", (req, res) => {
     let postTitles = req.body.posttitle;
@@ -68,44 +67,13 @@ app.post("/submit", (req, res) => {
     allPosts.push({ postTitles, publishedDate });
     res.redirect("/view"); //This is for redirect the ejs file on server to avoid the re-submission.
 });
-
-//
 
 app.get("/view", (req, res) => {
     res.render("view", { allPosts }); //Display all post on view.ejs template
 });
 app.get("/postDelete", (req, res) => {
     res.render("view", { allPosts });
-})
-
-//
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-
 });
-
-//
-
-
-
-//
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-
-});
-
-//
-
-
-
-
-//
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-
-});
-
-//
 app.post("/delete", (req, res) => {
     let selectedPostsIds = req.body.selectPosts;
     if (!selectedPostsIds) {
@@ -122,13 +90,6 @@ app.post("/delete", (req, res) => {
     res.redirect("/view");
 })
 
-//
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-
-});
-
-//
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 
