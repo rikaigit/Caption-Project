@@ -43,17 +43,17 @@ app.post("/submit", (req, res) => {
     let postDescription = req.body.description;
     let publishedDate = new Date().toLocaleDateString("en-GB");
     console.log(postTitles);
-    
-    allPosts.push({postTitles, publishedDate });
+    console.log('apple');
+    allPosts.push({ postTitles, publishedDate });
     res.redirect("/view"); //This is for redirect the ejs file on server to avoid the re-submission.
 });
 app.get("/view", (req, res) => {
     res.render("view", { allPosts }); //Display all post on view.ejs template
 });
-app.get("/postDelete", (req, res) =>{
+app.get("/postDelete", (req, res) => {
     res.render("view", { allPosts });
 })
-app.post("/delete", (req, res) =>{
+app.post("/delete", (req, res) => {
     let selectedPostsIds = req.body.selectPosts;
     if (!selectedPostsIds) {
         return res.redirect("/view"); // No selection, no action
