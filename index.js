@@ -47,6 +47,30 @@ app.post("/submit", (req, res) => {
     allPosts.push({ postTitles, publishedDate });
     res.redirect("/view"); //This is for redirect the ejs file on server to avoid the re-submission.
 });
+//
+
+app.post("/submit", (req, res) => {
+    let postTitles = req.body.posttitle;
+    let postDescription = req.body.description;
+    let publishedDate = new Date().toLocaleDateString("en-GB");
+    console.log(postTitles, postDescription);
+
+    allPosts.push({ postTitles, publishedDate });
+    res.redirect("/view"); //This is for redirect the ejs file on server to avoid the re-submission.
+});
+
+app.post("/submit", (req, res) => {
+    let postTitles = req.body.posttitle;
+    let postDescription = req.body.description;
+    let publishedDate = new Date().toLocaleDateString("en-GB");
+    console.log(postTitles, postDescription);
+
+    allPosts.push({ postTitles, publishedDate });
+    res.redirect("/view"); //This is for redirect the ejs file on server to avoid the re-submission.
+});
+
+//
+
 app.get("/view", (req, res) => {
     res.render("view", { allPosts }); //Display all post on view.ejs template
 });
