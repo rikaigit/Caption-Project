@@ -77,6 +77,35 @@ app.get("/view", (req, res) => {
 app.get("/postDelete", (req, res) => {
     res.render("view", { allPosts });
 })
+
+//
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+
+});
+
+//
+
+
+
+//
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+
+});
+
+//
+
+
+
+
+//
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+
+});
+
+//
 app.post("/delete", (req, res) => {
     let selectedPostsIds = req.body.selectPosts;
     if (!selectedPostsIds) {
@@ -92,6 +121,14 @@ app.post("/delete", (req, res) => {
 
     res.redirect("/view");
 })
+
+//
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+
+});
+
+//
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 
